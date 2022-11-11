@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public UnityAction ChangingHealth;
+    public UnityAction ChangingHealthEvent;
 
     public float Health { get; private set; }
 
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
             Health = _maxHealth;
         }
 
-        ChangingHealth?.Invoke();
+        ChangingHealthEvent?.Invoke();
 
         Debug.Log("Cured");
     }
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
             Health = 0;
         }
 
-        ChangingHealth?.Invoke();
+        ChangingHealthEvent?.Invoke();
 
         Debug.Log("Damaged");
     }
